@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odoo-helper-cli"
+version = "0.1.0"
+description = "CLI tools for Odoo developers: logs analysis, DB/migration helpers, performance, reports, and API utilities."
+readme = "README.md"
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["odoo", "cli", "migration", "postgres", "logs", "reports", "api"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Build Tools",
+  "Topic :: Utilities"
+]
+dependencies = [
+  "typer[all]>=0.9",
+  "rich>=13.7",
+  "orjson>=3.9",
+  "httpx>=0.27",
+  "tenacity>=8.2",
+  "pydantic>=2.6",
+  "psycopg[binary]>=3.2",
+  "XlsxWriter>=3.2",
+  "reportlab>=4.1"
+]
+
+[project.urls]
+Homepage = "https://example.com/odoo-helper-cli"
+Repository = "https://example.com/odoo-helper-cli.git"
+
+[project.scripts]
+odoo-helper = "odoo_helper_cli.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
